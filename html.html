@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Computer Online Status</title>
+  <script>
+    function checkOnlineStatus() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('HEAD', window.location.href, false);
+      xhr.send();
+
+      if (xhr.status >= 200 && xhr.status < 300) {
+        document.getElementById('status').textContent = 'Your computer is online.';
+      } else {
+        document.getElementById('status').textContent = 'Your computer is offline.';
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Computer Online Status</h1>
+  <button onclick="checkOnlineStatus()">Check</button>
+  <p id="status"></p>
+</body>
+</html>
+
